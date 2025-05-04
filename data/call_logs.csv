@@ -1,0 +1,209 @@
+timestamp,customer_id,query,response,escalated
+2023-10-01 10:00:00,1,"What are your hours?","We are open from 9 AM to 5 PM, Monday to Friday.",No
+2023-10-01 10:05:00,2,"Where are you located?","We are located at 123 Main St, Anytown, USA.",No
+2023-10-01 10:15:00,1,Ankur,What,Yes
+2023-10-01 10:15:00,1,Ankur,google,Yes
+2023-10-01 10:15:00,1,My refund is stuck ,,Yes
+2023-10-01 10:15:00,1,My refund is stuck ,My money is stick ,Yes
+2023-10-01 10:15:00,1,My refund is stuck, My money is stick,Yes
+2023-10-01 10:15:00,1, My money is stuck,My money is stuck,Yes
+2023-10-01 10:15:00,1,My money is stuck,My money is stuck,Yes
+2023-10-01 10:15:00,1,My money is stuck,My money is stuck,Yes
+2023-10-01 10:15:00,1,,,Yes
+2023-10-01 10:15:00,1,,,Yes
+2023-10-01 10:15:00,1,My money is stuck,My money is stuck,Yes
+2023-10-01 10:15:00,1,My money is stuck,My money is stuck,Yes
+2023-10-01 10:15:00,1,Ankur,Ankur,Yes
+2023-10-01 10:15:00,1,import json,from utils import log_call,Yes
+2023-10-01 10:15:00,1,from knowledge_base_manager import update_knowledge_base,,Yes
+2023-10-01 10:15:00,1,class AIAgent:,    def __init__(self):,Yes
+2023-10-01 10:15:00,1,        self.load_knowledge_base(),        self.escalated_queries = set()  # Track escalated queries,Yes
+2023-10-01 10:15:00,1,,    def load_knowledge_base(self):,Yes
+2023-10-01 10:15:00,1,        with open('data/knowledge_base.json') as f:,            self.knowledge_base = json.load(f),Yes
+2023-10-01 10:15:00,1,    def respond_to_query(self, query):,        for key in self.knowledge_base:,Yes
+2023-10-01 10:15:00,1,            if key in query.lower():,                return self.knowledge_base[key],Yes
+2023-10-01 10:15:00,1,        return None  # Indicates escalation needed,,Yes
+2023-10-01 10:15:00,1,    def escalate_to_supervisor(self, query):,        if query in self.escalated_queries:,Yes
+2023-10-01 10:15:00,1,            print("AI: I have already escalated this query. Please check the supervisor's response."),            return,Yes
+2023-10-01 10:15:00,1,        ,        print(f"Escalating query: {query}"),Yes
+2023-10-01 10:15:00,1,        self.escalated_queries.add(query)  # Mark this query as escalated,        # Simulate sending the query to the supervisor,Yes
+2023-10-01 10:15:00,1,        supervisor_response = input("Supervisor: Please provide an answer: "),        self.handle_supervisor_response(query, supervisor_response),Yes
+2023-10-01 10:15:00,1,    def handle_supervisor_response(self, query, supervisor_response):,        print(f"AI: Thank you! I will update my knowledge base."),Yes
+2023-10-01 10:15:00,1,        update_knowledge_base({query: supervisor_response}),        log_call("2023-10-01 10:15:00", "1", query, supervisor_response, "Yes"),Yes
+2023-10-01 10:15:00,1,    def start(self):,        while True:,Yes
+2023-10-01 10:15:00,1,            try:,                query = input("Customer: "),Yes
+2023-10-01 10:15:00,1,                response = self.respond_to_query(query),                if response:,Yes
+2023-10-01 10:15:00,1,                    print(f"AI: {response}"),                    log_call("2023-10-01 10:15:00", "1", query, response, "No"),Yes
+2023-10-01 10:15:00,1,                else:,                    self.escalate_to_supervisor(query),Yes
+2023-10-01 10:15:00,1,            except EOFError:,                print("\nNo more input. Exiting the program."),Yes
+2023-10-01 10:15:00,1,My money is stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,My money is stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,My money is stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Ankur,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,My money is stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,My money is stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Ankur,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,My money is stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Money Stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,My money is stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1, python3 src/main.py,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Customer: My money is stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,AI:     def load_knowledge_base(self):,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Customer:,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,My money is stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,My money is stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,My money is stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,money stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,My money is stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,My money is stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,My money is stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,My money is stuck ,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1, My money is stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1, My money is stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1, My money is stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1, My money is stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,My money is stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Query received:,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,My money is stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Query received:,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,My money is stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Query received:,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,My money is stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Query received:My money is stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,money stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,money stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,money stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,ankur,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,money is stuck ,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1, My money is stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Query received: My money is stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Match found:  ->     def load_knowledge_base(self):,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,AI:     def load_knowledge_base(self):,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Customer:,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Processing query: Query received:,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Query received: Query received:,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Match found:  ->     def load_knowledge_base(self):,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,AI:     def load_knowledge_base(self):,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Customer: My money is stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Query received:Processing query: My money is stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Query received: My money is stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Match found:  ->     def load_knowledge_base(self):,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,AI:     def load_knowledge_base(self):,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Customer: My money is stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Processing query: Query received:My money is stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Query received: Query received:My money is stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Match found:  ->     def load_knowledge_base(self):,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,AI:     def load_knowledge_base(self):,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Customer: money stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Processing query: money stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Query received: money stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Match found:  ->     def load_knowledge_base(self):,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,AI:     def load_knowledge_base(self):,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Customer:,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1, My money is stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Query received: My money is stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Match found:  ->     def load_knowledge_base(self):,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,AI:     def load_knowledge_base(self):,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Customer:,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Processing query: Query received:,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Query received: Query received:,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Match found:  ->     def load_knowledge_base(self):,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,AI:     def load_knowledge_base(self):,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Customer: My money is stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Query received:Processing query: My money is stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Query received: My money is stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Match found:  ->     def load_knowledge_base(self):,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,AI:     def load_knowledge_base(self):,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Customer: My money is stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Processing query: Query received:My money is stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Query received: Query received:My money is stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Match found:  ->     def load_knowledge_base(self):,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,AI:     def load_knowledge_base(self):,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Customer: money stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Processing query: money stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Query received: money stuck,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,Match found:  ->     def load_knowledge_base(self):,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1,AI:     def load_knowledge_base(self):,    def load_knowledge_base(self):,No
+2023-10-01 10:15:00,1, My money is stuck,Please wait, your issue is being escalated to the finance team.,No
+2023-10-01 10:15:00,1,Query received: My money is stuck,Please wait, your issue is being escalated to the finance team.,No
+2023-10-01 10:15:00,1,Match found:  ->     def load_knowledge_base(self):,AI:     def load_knowledge_base(self):,Yes
+2023-10-01 10:15:00,1,Customer:,Processing query: Query received:,Yes
+2023-10-01 10:15:00,1,Query received: Query received:,Match found:  ->     def load_knowledge_base(self):,Yes
+2023-10-01 10:15:00,1,AI:     def load_knowledge_base(self):,Customer: My money is stuck,Yes
+2023-10-01 10:15:00,1,Query received:Processing query: My money is stuck,Please wait, your issue is being escalated to the finance team.,No
+2023-10-01 10:15:00,1,Query received: My money is stuck,Please wait, your issue is being escalated to the finance team.,No
+2023-10-01 10:15:00,1,Customer: My money is stuck,Please wait, your issue is being escalated to the finance team.,No
+2023-10-01 10:15:00,1,Processing query: Query received:My money is stuck,Please wait, your issue is being escalated to the finance team.,No
+2023-10-01 10:15:00,1,Query received: Query received:My money is stuck,Please wait, your issue is being escalated to the finance team.,No
+2023-10-01 10:15:00,1,Customer: money stuck,Please wait while we check your transaction.,No
+2023-10-01 10:15:00,1,Processing query: money stuck,Please wait while we check your transaction.,No
+2023-10-01 10:15:00,1,Query received: money stuck,Please wait while we check your transaction.,No
+2023-10-01 10:15:00,1,My money is stuck,Please wait, your issue is being escalated to the finance team.,No
+2023-10-01 10:15:00,1,Money issue ,money stuck ,Yes
+2023-10-01 10:15:00,1,Money issue,our issue is being escalated to the finance team,Yes
+2023-10-01 10:15:00,1,Money issue,I need refund,Yes
+2023-10-01 10:15:00,1,Money issue,Money issue,Yes
+2023-10-01 10:15:00,1,Money stuck,Please wait while we check your transaction.,No
+2023-10-01 10:15:00,1,Refund issue ,Refunds typically take 3-5 business days.,No
+2023-10-01 10:15:00,1,refund status,Refunds typically take 3-5 business days.,No
+2023-10-01 10:15:00,1,I need it now,Refunds typically take 3-5 business days. ,Yes
+2023-10-01 10:15:00,1,refund status,Refunds typically take 3-5 business days.,No
+2023-10-01 10:15:00,1,I need it now,Refunds typically take 3-5 business days. Please wait ,Yes
+2023-10-01 10:15:00,1, I need it now, Refunds typically take 3-5 business days. Please wait,Yes
+2023-10-01 10:15:00,1,refund status,Refunds typically take 3-5 business days.,No
+2023-10-01 10:15:00,1, I need it now, Refunds typically take 3-5 business days. Please wait,Yes
+2023-10-01 10:15:00,1, refund status,Refunds typically take 3-5 business days.,No
+2023-10-01 10:15:00,1,refund status,Refunds typically take 3-5 business days.,No
+2023-10-01 10:15:00,1, I need it now, Refunds typically take 3-5 business days. Please wait,Yes
+2023-10-01 10:15:00,1,refund status,Refunds typically take 3-5 business days.,No
+2023-10-01 10:15:00,1,refund status,Refunds typically take 3-5 business days.,No
+2023-10-01 10:15:00,1,I need it now,Refunds typically take 3-5 business days. Please wait,Yes
+2023-10-01 10:15:00,1,refund status,Refunds typically take 3-5 business days.,No
+2023-10-01 10:15:00,1,Refunds typically take 3-5 business days. Please wait,Refunds typically take 3-5 business days.,No
+2023-10-01 10:15:00,1,refund status,Refunds typically take 3-5 business days.,No
+2023-10-01 10:15:00,1,I need it now,Refunds typically take 3-5 business days. Please wait,Yes
+2023-10-01 10:15:00,1,refund status,Refunds typically take 3-5 business days.,No
+2023-10-01 10:15:00,1,i need it now ,Refunds typically take 3-5 business days. Please wait,No
+2023-10-01 10:15:00,1,why not now ,Refunds typically take 3-5 business days. Refund can take some time. So kindly wait. ,Yes
+2023-10-01 10:15:00,1, refund status,Refunds typically take 3-5 business days.,No
+2023-10-01 10:15:00,1,i need it now,Refunds typically take 3-5 business days. Please wait,No
+2023-10-01 10:15:00,1,why not now ,Refunds typically take 3-5 business days. Refund can take some time. So kindly wait. ,No
+2023-10-01 10:15:00,1,trax status,transection is in pending state. Please allow some time. ,Yes
+2023-10-01 10:15:00,1,trax status,transection is in pending state. Please allow some time. ,No
+2023-10-01 10:15:00,1,how much time ,it will take some time to check status of transection,Yes
+2023-10-01 10:15:00,1,abc,,Yes
+2023-10-01 10:15:00,1,abc,,Yes
+2023-10-01 10:15:00,1,refund,Refunds typically take 3-5 business days.,No
+2023-10-01 10:15:00,1,refund,Refunds typically take 3-5 business days.,No
+2023-10-01 10:15:00,1,abc,bad,Yes
+2023-10-01 10:15:00,1,,,Yes
+2023-10-01 10:15:00,1,new,abc,Yes
+2023-10-01 10:15:00,1,new,new,Yes
+2023-10-01 10:15:00,1,,,Yes
+2023-10-01 10:15:00,1,abc,abc,Yes
+2023-10-01 10:15:00,1,abc,xyz,Yes
+2023-10-01 10:15:00,1,refund status,Refunds typically take 3-5 business days.,No
+2023-10-01 10:15:00,1,i want it now ,Refunds typically take 3-5 business days. Kindly wait ,Yes
+2023-10-01 10:15:00,1,refund status ,Refunds typically take 3-5 business days.,No
+2023-10-01 10:15:00,1,i want to it now,Refunds typically take 3-5 business days. Kindly wait,Yes
+2023-10-01 10:15:00,1,refund status,Refunds typically take 3-5 business days.,No
+2023-10-01 10:15:00,1,i want it now ,,Yes
+2023-10-01 10:15:00,1,,,Yes
+2023-10-01 10:15:00,1,refund status,Refunds typically take 3-5 business days.,No
+2023-10-01 10:15:00,1,i want it now ,Refunds typically take 3-5 business days. Please wait ,Yes
+2023-10-01 10:15:00,1,refund status,Refunds typically take 3-5 business days.,No
+2023-10-01 10:15:00,1,i want it now,Refunds typically take 3-5 business days. Please wait,Yes
+2023-10-01 10:15:00,1,refund status,Refunds typically take 3-5 business days.,No
+2023-10-01 10:15:00,1,refund status,Refunds typically take 3-5 business days.,No

@@ -1,0 +1,2 @@
+timestamp,customer_id,query,supervisor_response
+2023-10-01 10:10:00,3,"Can I return an item after 30 days?","Yes, but only with a valid reason and manager approval."

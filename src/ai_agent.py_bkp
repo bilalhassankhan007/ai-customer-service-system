@@ -1,0 +1,53 @@
+import json
+from utils import log_call
+from knowledge_base_manager import update_knowledge_base
+
+class AIAgent:
+    def __init__(self):
+        self.load_knowledge_base()
+        self.escalated_queries = set()  # Track escalated queries
+
+    def load_knowledge_base(self):
+        with open('data/knowledge_base.json') as f:
+            self.knowledge_base = json.load(f)
+
+    def save_and_reload_knowledge_base(self, query, supervisor_response):
+        update_knowledge_base(query, supervisor_response)  # Pass query and supervisor_response separately
+        self.load_knowledge_base()  # Reload the updated file
+        print(f"AI: Knowledge base updated and reloaded.")
+
+    def respond_to_query(self, query):
+        for key in self.knowledge_base:
+            if key.lower() in query.lower():  # Case insensitive match
+                return self.knowledge_base[key]
+        return None  # Indicates escalation needed
+
+    def escalate_to_supervisor(self, query):
+        if query in self.escalated_queries:
+            print("AI: I have already escalated this query. Please check the supervisor's response.")
+            return
+
+        print(f"Escalating query: {query}")
+        self.escalated_queries.add(query)  # Mark this query as escalated
+        # Simulate sending the query to the supervisor
+        supervisor_response = input("Supervisor: Please provide an answer: ")
+        self.handle_supervisor_response(query, supervisor_response)
+
+    def handle_supervisor_response(self, query, supervisor_response):
+        print(f"AI: Thank you! Updating my knowledge base...")
+        self.save_and_reload_knowledge_base(query, supervisor_response)
+        log_call("2023-10-01 10:15:00", "1", query, supervisor_response, "Yes")
+
+    def start(self):
+        while True:
+            try:
+                query = input("Customer: ")
+                response = self.respond_to_query(query)
+                if response:
+                    print(f"AI: {response}")
+                    log_call("2023-10-01 10:15:00", "1", query, response, "No")
+                else:
+                    self.escalate_to_supervisor(query)
+            except EOFError:
+                print("\nNo more input. Exiting the program.")
+                break
